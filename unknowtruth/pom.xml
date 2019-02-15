@@ -73,6 +73,7 @@
                 <includes>
                     <include>config/application.properties</include>
                     <include>config/*-${env}.properties</include>
+                    <include>logback-spring.xml</include>
                 </includes>
             </resource>
         </resources>
@@ -82,6 +83,7 @@
             <id>dev</id>
             <properties>
                 <env>dev</env>
+                <logbackPath>d:/home/unknowtruth/log</logbackPath>
             </properties>
             <activation>
                 <activeByDefault>true</activeByDefault>
@@ -91,12 +93,14 @@
             <id>test</id>
             <properties>
                 <env>test</env>
+                <logbackPath>/home/logs</logbackPath>
             </properties>
         </profile>
         <profile>
             <id>prod</id>
             <properties>
                 <env>prd</env>
+                <logbackPath>/home/logs</logbackPath>
             </properties>
         </profile>
     </profiles>
