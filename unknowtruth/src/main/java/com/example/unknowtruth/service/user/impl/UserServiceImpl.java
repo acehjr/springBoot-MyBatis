@@ -16,8 +16,25 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserDao userDao;
-
+    @Override
     public List<UserDto> getUsers(){
+
         return userDao.getUsers();
+    }
+    @Override
+    public UserDto getUser(){
+
+        return userDao.selectByPrimaryKey(1);
+    }
+
+    @Override
+    public int insertUser(){
+        UserDto userDto = new UserDto();
+        userDto.setId(2);
+        userDto.setName("b");
+        userDto.setSex("g");
+        userDto.setOtherName("other name b");
+
+        return userDao.insert(userDto);
     }
 }

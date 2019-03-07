@@ -5,7 +5,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("com.example.unknowtruth.dao.*")
+//@MapperScan("com.example.unknowtruth.dao.*")
+@tk.mybatis.spring.annotation.MapperScan(basePackages = "com.example.unknowtruth.dao.*")
 public class UnknowtruthApplication {
 
     public static void main(String[] args) {

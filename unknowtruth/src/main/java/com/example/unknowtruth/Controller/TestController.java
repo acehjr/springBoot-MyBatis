@@ -33,4 +33,18 @@ public class TestController {
         List<UserDto> listUserDto=userService.getUsers();
         return new ResultDto(0,listUserDto);
     }
+
+    @RequestMapping("/getUser")
+    public ResultDto getUser(){
+        log.info("getUser");
+        UserDto listUserDto=userService.getUser();
+        return new ResultDto(0,listUserDto);
+    }
+
+    @RequestMapping("/insertUser")
+    public ResultDto insertUser(){
+        log.info("insertUser");
+        int i=userService.insertUser();
+        return new ResultDto(0,i);
+    }
 }
