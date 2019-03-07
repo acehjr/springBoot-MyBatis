@@ -176,7 +176,7 @@
     <!--<logger name="org.apache.ibatis" level="debug" />-->
 
     <!--  mapper 文件的包路径-->
-    <logger name="com.example.demo.dao" level="debug" />
+    <logger name="com.example.unknowtruth.dao" level="debug" />
 
     <!--log4jdbc -->
     <logger name="jdbc.sqltiming" level="debug"/>
