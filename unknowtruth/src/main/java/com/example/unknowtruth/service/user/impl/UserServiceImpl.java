@@ -1,5 +1,6 @@
 package com.example.unknowtruth.service.user.impl;
 
+import com.example.unknowtruth.common.config.dataSource.SlaveConnection;
 import com.example.unknowtruth.dao.user.UserDao;
 import com.example.unknowtruth.dto.user.UserDto;
 import com.example.unknowtruth.service.user.UserService;
@@ -16,7 +17,9 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserDao userDao;
+
     @Override
+    @SlaveConnection
     public List<UserDto> getUsers(){
 
         return userDao.getUsers();
