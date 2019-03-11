@@ -19,7 +19,6 @@ public class DataSourceConfiguration {
     private Class<? extends DataSource> dataSourceType;
 
     @Bean(name = "masterDatasource")
-    @Primary
     @ConfigurationProperties(prefix = "master.datasource")
     public DataSource masterDatasource() {
         System.out.println("-------------------- writeDataSource init ---------------------");

@@ -6,6 +6,8 @@ import com.example.unknowtruth.dto.user.UserDto;
 import com.example.unknowtruth.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.interceptor.TransactionAspectSupport;
 
 import java.util.List;
 
@@ -31,12 +33,17 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public int insertUser(){
+    @Transactional
+    public int insertUser() {
         UserDto userDto = new UserDto();
-        userDto.setId(2);
+        userDto.setId(11);
         userDto.setName("b");
         userDto.setSex("g");
         userDto.setOtherName("other name b");
+        int reVal = userDao.insert(userDto);
+        if(reVal > 0){
+            throw new RuntimeException("试试事务");
+        }
 
         return userDao.insert(userDto);
     }

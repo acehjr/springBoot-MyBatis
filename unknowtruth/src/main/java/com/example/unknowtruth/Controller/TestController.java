@@ -44,7 +44,7 @@ public class TestController {
     @RequestMapping("/insertUser")
     public ResultDto insertUser(){
         log.info("insertUser");
-        int i=userService.insertUser();
+        int i = userService.insertUser();
         return new ResultDto(0,i);
     }
 }
